@@ -1,0 +1,43 @@
+{
+  "name": "mini-nest",
+  "version": "1.0.0",
+  "description": "Власний IoC-контейнер на reflect-metadata: @Injectable, @Inject, скоупи, детекція циклів",
+  "license": "ISC",
+  "author": "Anastasiia Vorobiova",
+  "type": "module",
+  "main": "dist/main.js",
+  "engines": {
+    "node": ">=24.0.0 <25.0.0",
+    "npm": ">=11.0.0 <12.0.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=24.0.0 <25.0.0",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": ">=11.0.0 <12.0.0",
+      "onFail": "error"
+    }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "start": "node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "pretest": "rm -rf dist-test && tsc",
+    "test": "node --import ./dist-test/test/setup.js --test \"dist-test/test/**/*.test.js\""
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "typescript": "^6.0.3"
+  }
+}

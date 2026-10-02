@@ -1,0 +1,8 @@
+services:
+  api:
+    build:
+      target: dev
+    image: mini-nest:dev
+    volumes:
+      - ./src:/app/src:ro
+      - ./test:/app/test:ro
