@@ -1,0 +1,9 @@
+name: mini-nest
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    image: mini-nest:1.0.0
